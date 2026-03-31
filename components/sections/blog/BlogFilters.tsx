@@ -16,8 +16,8 @@ export function BlogFilters({ locale }: { locale: string }) {
   const [activeCat, setActiveCat] = useState(categories[0]);
 
   return (
-    <section className="px-8 py-12 bg-white sticky top-20 z-40 border-b border-[#e6e8eb]">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+    <section className="px-4 sm:px-8 py-8 sm:py-12 bg-white border-b border-[#e6e8eb]">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-6 sm:gap-8">
         
         {/* Chips de categorías */}
         <div className="flex flex-wrap justify-center gap-3">
@@ -25,7 +25,7 @@ export function BlogFilters({ locale }: { locale: string }) {
             <button
               key={idx}
               onClick={() => setActiveCat(cat)}
-              className={`px-6 py-2 rounded-full font-semibold transition-all ${
+              className={`px-4 sm:px-6 py-2 rounded-full font-semibold transition-all text-sm sm:text-base ${
                 activeCat === cat
                   ? "bg-[#000d22] text-white"
                   : "bg-[#f2f4f7] text-[#191c1e] hover:bg-[#e0e3e6]"

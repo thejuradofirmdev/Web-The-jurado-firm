@@ -55,11 +55,11 @@ export function BlogGrid({ locale }: { locale: string }) {
       ];
 
   return (
-    <section className="px-8 py-20 max-w-7xl mx-auto">
-      <div className="grid lg:grid-cols-12 gap-16">
+    <section className="px-4 sm:px-8 py-16 sm:py-20 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
         
         {/* Columna Izquierda: Grid de Artículos */}
-        <div className="lg:col-span-8 grid md:grid-cols-2 gap-10">
+        <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-10">
           {posts.map((post, idx) => (
             <article key={idx} className="flex flex-col group cursor-pointer">
               <div className="aspect-[16/10] rounded-2xl overflow-hidden mb-6 relative">

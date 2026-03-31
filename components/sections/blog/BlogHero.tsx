@@ -8,19 +8,19 @@ export function BlogHero({ locale }: { locale: string }) {
   const isEs = locale === "es";
 
   return (
-    <header className="relative overflow-hidden px-8 py-20 lg:py-32 bg-[#f7f9fc]">
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+    <header className="relative overflow-hidden px-4 sm:px-8 py-16 sm:py-20 lg:py-32 bg-[#f7f9fc]">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
         {/* Texto Izquierdo */}
         <div className="z-10">
           <span className="inline-block px-4 py-1.5 mb-6 text-sm font-bold tracking-widest uppercase bg-[#B8860B]/10 text-[#B8860B] rounded-full">
             {isEs ? "Educación y Actualidad" : "Education & News"}
           </span>
-          <h1 className="font-serif text-5xl lg:text-7xl text-[#000d22] leading-tight mb-8">
+          <h1 className="font-serif text-3xl sm:text-5xl lg:text-7xl text-[#000d22] leading-tight mb-6 sm:mb-8">
             {isEs
               ? "Blog Legal — Tu Guía en el Camino Migratorio"
               : "Legal Blog — Your Guide on the Immigration Journey"}
           </h1>
-          <p className="text-xl text-gray-500 max-w-xl mb-10 leading-relaxed">
+          <p className="text-lg sm:text-xl text-gray-500 max-w-xl mb-8 sm:mb-10 leading-relaxed">
             {isEs
               ? "Información clara, bilingüe y actualizada sobre leyes de inmigración en California."
               : "Clear, bilingual, and updated information on immigration laws in California."}

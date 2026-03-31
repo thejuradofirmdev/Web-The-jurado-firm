@@ -106,7 +106,7 @@ export function ServicesHero({ locale }: { locale: string }) {
               </div>
 
               {/* Teléfono + Área */}
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">
                     {isEs ? "Teléfono" : "Phone"}
@@ -125,7 +125,7 @@ export function ServicesHero({ locale }: { locale: string }) {
                   <select
                     {...register("area")}
                     onChange={(e) => setValue("area", e.target.value as FormValues["area"], { shouldValidate: true })}
-                    className="w-full bg-[#f2f4f7] border-none rounded-lg focus:ring-2 focus:ring-[#7b5800]/50 py-3 px-3 outline-none text-sm"
+                    className="w-full bg-[#f2f4f7] border-none rounded-lg focus:ring-2 focus:ring-[#7b5800]/50 py-3 px-3 outline-none text-sm appearance-none"
                   >
                     {areas.map((a) => (
                       <option key={a.value} value={a.value}>{a.label}</option>

@@ -68,7 +68,7 @@ export function LeadForm({ locale }: { locale: string }) {
 
   return (
     <div
-      className="w-full max-w-md bg-white rounded-xl shadow-[0_20px_50px_rgba(4,28,56,0.12)] p-8 relative overflow-hidden"
+      className="w-full max-w-md bg-white rounded-xl shadow-[0_20px_50px_rgba(4,28,56,0.12)] p-6 sm:p-8 relative overflow-hidden"
       id="contacto"
     >
       {/* Acento lateral izquierdo */}
@@ -143,7 +143,7 @@ export function LeadForm({ locale }: { locale: string }) {
                   shouldValidate: true,
                 })
               }
-              className="w-full px-4 py-3 rounded-lg bg-[#f2f4f7] focus:ring-2 focus:ring-[#7b5800]/20 focus:bg-white transition-all outline-none border-none"
+              className="w-full px-4 py-3 rounded-lg bg-[#f2f4f7] focus:ring-2 focus:ring-[#7b5800]/20 focus:bg-white transition-all outline-none border-none appearance-none text-sm"
             >
               <option value="">{isEs ? "Selecciona una opción" : "Select an option"}</option>
               {serviceOptions.map((opt) => (
