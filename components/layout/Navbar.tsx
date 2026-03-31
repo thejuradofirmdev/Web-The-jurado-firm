@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { useLocale } from "next-intl";
 import { usePathname, useRouter } from "next/navigation";
@@ -12,17 +12,10 @@ import { Menu, X, ChevronDown, MessageCircle } from "lucide-react";
  */
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const locale = useLocale();
   const currentPath = usePathname();
   const router = useRouter();
   const isEs = locale === "es";
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 10);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   /** 🔀 Alterna entre ES y EN preservando la ruta actual */
   const toggleLang = () => {

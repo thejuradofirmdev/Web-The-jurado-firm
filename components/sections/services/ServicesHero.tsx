@@ -22,7 +22,7 @@ type FormValues = z.infer<typeof schema>;
 export function ServicesHero({ locale }: { locale: string }) {
   const isEs = locale === "es";
   const [done, setDone] = useState(false);
-  const { register, handleSubmit, setValue, formState: { errors } } = useForm<FormValues>({ resolver: zodResolver(schema) });
+  const { register, handleSubmit, setValue } = useForm<FormValues>({ resolver: zodResolver(schema) });
 
   const onSubmit = async (data: FormValues) => {
     try {

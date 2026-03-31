@@ -1,4 +1,3 @@
-import Link from "next/link";
 
 /**
  * 🤝 CommitmentSection — Compromiso del Abogado (quote + lista de valores)
