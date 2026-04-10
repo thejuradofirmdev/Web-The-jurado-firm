@@ -1,52 +1,70 @@
+"use client";
+
 import Image from "next/image";
+import { BookOpen, Star } from "lucide-react";
+import { motion } from "framer-motion";
 
 /**
- * 📰 BlogHero — Header hero de la página de Blog
- * Asymmetric layout: texto a la izquierda, imagen en landscape a la derecha con quote
+ * 📰 BlogHero — Header hero de la página de Blog (V2.1 - Full Background).
+ * Consistente con el diseño global: fondo completo, gradiente de autoridad y alineación izquierda.
+ * @param {Object} props - Propiedades del componente.
+ * @param {string} props.locale - El idioma actual ('es' o 'en').
  */
 export function BlogHero({ locale }: { locale: string }) {
   const isEs = locale === "es";
 
   return (
-    <header className="relative overflow-hidden px-4 sm:px-8 py-16 sm:py-20 lg:py-32 bg-[#f7f9fc]">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
-        {/* Texto Izquierdo */}
-        <div className="z-10">
-          <span className="inline-block px-4 py-1.5 mb-6 text-sm font-bold tracking-widest uppercase bg-[#B8860B]/10 text-[#B8860B] rounded-full">
+    <header className="relative min-h-[80vh] flex items-center overflow-hidden bg-navy text-white">
+      {/* 🖼️ Imagen de Fondo Completa con Overlay */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="https://images.unsplash.com/photo-1505664194779-8be93c537d97?auto=format&fit=crop&q=80"
+          alt="Legacy law library"
+          fill
+          className="object-cover"
+          unoptimized
+        />
+        {/* Overlay gradiente premium: Navy sólido a transparente */}
+        <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/90 to-navy/30" />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full relative z-10 flex flex-col items-start pt-32 pb-24">
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="max-w-4xl"
+        >
+          <span className="inline-block py-2 px-5 mb-8 text-xs font-bold tracking-[0.2em] uppercase bg-gold/20 text-gold rounded-full backdrop-blur-md border border-gold/30">
             {isEs ? "Educación y Actualidad" : "Education & News"}
           </span>
-          <h1 className="font-serif text-3xl sm:text-5xl lg:text-7xl text-[#000d22] leading-tight mb-6 sm:mb-8">
+          <h1 className="font-serif text-5xl md:text-8xl font-extrabold text-white leading-tight mb-8">
             {isEs
-              ? "Blog Legal — Tu Guía en el Camino Migratorio"
-              : "Legal Blog — Your Guide on the Immigration Journey"}
+              ? "Blog Legal — Tu Guía en el Camino"
+              : "Legal Blog — Your Guide on the Journey"}
           </h1>
-          <p className="text-lg sm:text-xl text-gray-500 max-w-xl mb-8 sm:mb-10 leading-relaxed">
+          <p className="text-xl md:text-3xl text-slate-300 font-light max-w-2xl mb-12 leading-relaxed">
             {isEs
-              ? "Información clara, bilingüe y actualizada sobre leyes de inmigración en California."
-              : "Clear, bilingual, and updated information on immigration laws in California."}
+              ? "Información clara, bilingüe y actualizada sobre leyes de inmigración en California para proteger a tu familia."
+              : "Clear, bilingual, and updated information on immigration laws in California to protect your family."}
           </p>
-        </div>
 
-        {/* Imagen Derecha */}
-        <div className="relative">
-          <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl rotate-2">
-            <Image
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBH8Vhg5W1sUuLEVPpwVg0H9Qn2BpBHwFwvxxPE5NtNXA57Y7nHJmy58M7E0dnOB4mi_1z1sHFNI2OLediVEHFkYcd7X0ph2rBRNh5rGLZ-wVakOxeTfCshMc-NENkfbRBkuCsWP0dzddxQmjFRF2Ci4szcfKE3oIxcWMSK3BI0X2fncE5U1VBdsw0gx0ftVQgWGpxLEOrXNBT3evx8m-l-ry6btHsq8VlqiPZXeA-7sPHfyRK9Bybw0JaHSxq2oEOlxF0aexyDnPY4"
-              alt="High-end legal office"
-              fill
-              className="object-cover"
-              unoptimized
-            />
+          <div className="flex flex-col sm:flex-row gap-8 items-center">
+            <div className="flex items-center gap-4 px-6 py-4 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10">
+              <BookOpen className="w-8 h-8 text-gold" />
+              <div className="flex flex-col">
+                <span className="text-xs font-bold text-gold uppercase tracking-tighter">Knowledge Base</span>
+                <span className="text-sm font-medium">Updated Weekly</span>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+               <div className="flex text-gold">
+                {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-current" />)}
+              </div>
+              <span className="text-sm font-medium text-white/80">Expert Insights</span>
+            </div>
           </div>
-          {/* Quote Card (Escondido en móvil según diseño) */}
-          <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.15)] max-w-xs hidden md:block">
-            <p className="italic font-serif text-[#000d22] text-lg">
-              {isEs
-                ? '"Nuestra misión es humanizar la ley federal para cada familia que servimos."'
-                : '"Our mission is to humanize federal law for every family we serve."'}
-            </p>
-          </div>
-        </div>
+        </motion.div>
       </div>
     </header>
   );

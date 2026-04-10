@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useLocale } from "next-intl";
 import { usePathname, useRouter } from "next/navigation";
 import { Menu, X, ChevronDown, MessageCircle } from "lucide-react";
@@ -38,10 +39,18 @@ export function Navbar() {
       <header className="fixed top-0 w-full z-50 bg-white/85 backdrop-blur-md shadow-sm">
         <nav className="flex justify-between items-center px-6 lg:px-10 py-4 max-w-full mx-auto">
 
-          {/* Marca */}
+          {/* Marca Logo Oficial */}
           <div className="flex items-center gap-2 flex-shrink-0">
-            <Link href={`/${locale}`} className="text-2xl font-serif font-bold text-[#000d22]">
-              The Jurado Firm
+            <Link href={`/${locale}`} className="flex items-center">
+              <Image 
+                src="/images/logo.png" 
+                alt="The Jurado Firm - Abogados de Inmigración" 
+                width={220} 
+                height={60} 
+                className="h-10 w-auto object-contain"
+                unoptimized
+                priority
+              />
             </Link>
           </div>
 

@@ -30,7 +30,7 @@ export function OfficeLocations({ locale }: { locale: string }) {
   ];
 
   return (
-    <section className="py-24 bg-[#f2f4f7]">
+    <section className="py-24 bg-[#fcfaf7]">
       <div className="max-w-7xl mx-auto px-8">
         <h2 className="font-serif text-4xl text-[#000d22] mb-16 text-center">
           {isEs ? "Nuestras Oficinas" : "Our Locations"}

@@ -26,4 +26,16 @@
   .text-balance {
     text-wrap: balance;
   }
+  .glass-card {
+    @apply bg-white/85 backdrop-blur-[20px] shadow-lg border border-white/20;
+  }
+  .glass-card-dark {
+    @apply bg-navy/85 backdrop-blur-[20px] shadow-lg shadow-navy/50 border border-white/10;
+  }
+  .tech-bg-gradient {
+    @apply bg-gradient-to-b from-navy to-[#061020];
+  }
+  .tech-bg-radial {
+    background: radial-gradient(circle at center, rgba(13, 35, 64, 1) 0%, rgba(6, 16, 32, 1) 100%);
+  }
 }

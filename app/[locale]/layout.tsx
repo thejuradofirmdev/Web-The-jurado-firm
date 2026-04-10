@@ -5,6 +5,7 @@ import { getMessages, getTranslations } from "next-intl/server";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { CookieBanner } from "@/components/layout/CookieBanner";
+import { ScrollIndicator } from "@/components/ui/ScrollIndicator";
 import { GoogleAnalytics } from '@next/third-parties/google';
 import "../globals.css";
 
@@ -40,6 +41,7 @@ export default async function RootLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <body suppressHydrationWarning className={`${inter.variable} ${playfair.variable} font-sans antialiased bg-background text-foreground flex flex-col min-h-screen`}>
+        <ScrollIndicator />
         <NextIntlClientProvider messages={messages}>
           <Navbar />
           <div className="flex-1 pt-20">

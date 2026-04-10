@@ -12,9 +12,12 @@ export async function POST(request: Request) {
     const MYCASE_WEBHOOK_URL = process.env.MYCASE_WEBHOOK_URL || 'https://api.mycase.com/v1/leads';
     const MYCASE_API_KEY = process.env.MYCASE_API_KEY;
 
-    // Simulate Network Request to CRM for now if there is no env variable
+    // El cliente solicitó envío a este correo:
+    const RECIPIENT_EMAIL = "Dora@thejuradofirm.com";
+
+    // Simulate Network Request to CRM / Email for now if there is no env variable
     if (!process.env.MYCASE_WEBHOOK_URL) {
-      console.log('Mocking CRM Webhook success for lead:', validatedData);
+      console.log(`Mocking Email delivery to ${RECIPIENT_EMAIL} for lead:`, validatedData);
       return NextResponse.json({ success: true, message: "Lead captured successfully" }, { status: 200 });
     }
 

@@ -19,8 +19,11 @@ const config: Config = {
           dark: '#9A7209',
         },
         premium: '#F2F4F7',
-        approved: '#166534',
+        approved: '#22C55E', // Green requested in PRD
         whatsapp: '#25D366',
+        tech: {
+          DEFAULT: '#3B82F6', // Acento tecnológico
+        },
         
         // Manteniendo compatibilidad temporal para componentes que usaban primary/secondary/background
         background: "var(--background)",
@@ -36,6 +39,14 @@ const config: Config = {
         serif: ['var(--font-playfair)', 'Georgia', 'serif'],
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
       },
+      keyframes: {
+        shimmer: {
+          '100%': { transform: 'translateX(100%)' },
+        }
+      },
+      animation: {
+        shimmer: 'shimmer 1.5s infinite',
+      }
     },
   },
   plugins: [],

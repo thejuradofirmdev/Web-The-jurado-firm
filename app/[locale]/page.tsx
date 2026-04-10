@@ -10,6 +10,9 @@ import { TeamSection } from "@/components/sections/TeamSection";
 import { TrustBadges } from "@/components/sections/TrustBadges";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 
+import { ContactSection } from "@/components/sections/ContactSection";
+import { FAQAccordion } from "@/components/sections/FAQAccordion";
+
 export default function HomePage({ params: { locale } }: { params: { locale: string } }) {
   return (
     <div className="flex flex-col min-h-screen w-full select-none antialiased">
@@ -17,12 +20,10 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
       <TrustBar locale={locale} />
       <AttorneySection locale={locale} />
       <ServicesGrid locale={locale} />
-      <ProcessSection locale={locale} />
-
       <GoogleReviews locale={locale} />
-      <CommitmentSection locale={locale} />
-      <TeamSection locale={locale} />
-      <TrustBadges locale={locale} />
+      <ProcessSection locale={locale} />
+      <ContactSection locale={locale} />
+      <FAQAccordion locale={locale} />
       <FinalCTA locale={locale} />
     </div>
   );

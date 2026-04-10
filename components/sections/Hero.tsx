@@ -1,80 +1,133 @@
+"use client";
+
 import Link from "next/link";
-import { LeadForm } from "@/components/sections/LeadForm";
-import { Phone } from "lucide-react";
+import { Phone, Star, BadgeCheck } from "lucide-react";
+import { motion } from "framer-motion";
 
 /**
- * 🦸 Hero — The Jurado Firm
- * Layout asimétrico 60/40: izquierda content oscuro sobre imagen + stats, derecha formulario blanco
+ * 🦸 Hero — The Jurado Firm (V2.1 - Full Background)
+ * Diseño optimizado: Imagen completa de fondo, gradiente de autoridad y neuromarketing.
+ * @param {Object} props - Propiedades del componente.
+ * @param {string} props.locale - El idioma actual ('es' o 'en').
  */
-export async function Hero({ locale }: { locale: string }) {
+export function Hero({ locale }: { locale: string }) {
   const isEs = locale === "es";
 
+  // Split text animation variants
+  const textVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: i * 0.05, duration: 0.5, ease: "easeOut" },
+    }),
+  };
+
+  const titleText = isEs
+    ? "Tu familia o tu carrera merecen cruzar fronteras."
+    : "Your family or your career deserve to cross borders.";
+
   return (
-    <section className="relative min-h-[921px] flex flex-col lg:flex-row overflow-hidden">
-
-      {/* ══ Columna Izquierda 60% — Hero Content ══ */}
-      <div
-        className="w-full lg:w-[60%] relative flex items-center px-8 lg:px-20 py-20"
-        style={{
-          background: "linear-gradient(rgba(0,13,34,0.65), rgba(0,13,34,0.65)), url('https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat",
-        }}
-      >
-        <div className="relative z-10 max-w-2xl">
-          {/* Badge */}
-          <span className="inline-block py-1 px-4 bg-yellow-600/20 border border-yellow-400/30 text-yellow-300 rounded-full text-sm font-medium mb-6">
-            {isEs ? "Firma de Abogados de Inmigración · Long Beach, CA" : "Immigration Law Firm · Long Beach, CA"}
-          </span>
-
-          {/* H1 */}
-          <h1 className="text-5xl lg:text-7xl font-serif font-bold text-white leading-tight mb-6">
-            {isEs ? "Tu familia merece un futuro aquí." : "Your family deserves a future here."}
-          </h1>
-
-          {/* Subtítulo */}
-          <p className="text-xl text-white/80 font-light leading-relaxed mb-10 max-w-xl">
-            {isEs
-              ? "Abogados de inmigración bilingües que entienden tu cultura. Hemos ayudado a cientos de familias en California a reunirse."
-              : "Bilingual immigration attorneys who understand your culture. We've helped hundreds of families reunite in California."}
-          </p>
-
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 mb-12">
-            <Link
-              href={`/${locale}#contacto`}
-              className="bg-[#f7bd48] hover:bg-[#7b5800] text-[#000d22] hover:text-white px-8 py-4 rounded-xl font-bold transition-all shadow-xl text-center"
-            >
-              {isEs ? "Agenda tu Consulta Gratuita" : "Schedule Your Free Consultation"}
-            </Link>
-            <a
-              href="tel:18005705101"
-              className="border border-white/40 hover:bg-white/10 text-white px-8 py-4 rounded-xl font-bold transition-all flex items-center justify-center gap-2"
-            >
-              <Phone className="h-5 w-5" />
-              {isEs ? "Llámanos: 1(800) 570-5101" : "Call us: 1(800) 570-5101"}
-            </a>
-          </div>
-
-          {/* Estadísticas */}
-          <div className="grid grid-cols-3 gap-8 border-t border-white/20 pt-8">
-            <div>
-              <span className="text-[#f7bd48] font-bold text-2xl block">500+</span>
-              <span className="text-white/70 text-sm">{isEs ? "Familias Reunidas" : "Families Reunited"}</span>
-            </div>
-            <div>
-              <span className="text-[#f7bd48] font-bold text-2xl block">15+</span>
-              <span className="text-white/70 text-sm">{isEs ? "Años de Experiencia" : "Years of Experience"}</span>
-            </div>
-            <div>
-              <span className="text-[#f7bd48] font-bold text-2xl block">100%</span>
-              <span className="text-white/70 text-sm">{isEs ? "Compromiso Total" : "Full Commitment"}</span>
-            </div>
-          </div>
-        </div>
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-navy text-white">
+      {/* 🖼️ Imagen de Fondo Completa con Overlay */}
+      <div className="absolute inset-0 z-0">
+        <div
+          className="absolute inset-0 bg-cover bg-right md:bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url('/images/carlos-jurado-new.jpg')",
+          }}
+        />
+        {/* Overlay gradiente premium para legibilidad: Navy sólido a transparente */}
+        <div className="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/60 to-transparent" />
+        <div className="absolute inset-0 bg-black/5" />
       </div>
 
-      {/* ══ Columna Derecha 40% — Formulario Flotante ══ */}
-      <div className="w-full lg:w-[40%] bg-[#f7f9fc] flex items-center justify-center p-8 lg:p-12">
-        <LeadForm locale={locale} />
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full relative z-10 flex flex-col items-start pt-32 pb-24">
+        {/* Badge Flotante Animado */}
+        <motion.div
+          initial={{ opacity: 0, x: -25 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="inline-flex items-center gap-3 py-2 px-5 bg-white/5 backdrop-blur-md border border-white/10 rounded-full text-white text-sm font-medium mb-10 shadow-2xl"
+        >
+          <div className="flex text-gold">
+            {[...Array(5)].map((_, i) => (
+              <Star key={i} className="w-4 h-4 fill-current" />
+            ))}
+          </div>
+          <span className="tracking-wide">
+            Google 5.0 Rating — Elite Experts
+          </span>
+        </motion.div>
+
+        {/* H1 Combinado con Split Text */}
+        <h1 className="text-5xl lg:text-8xl font-serif font-bold text-white leading-[1.1] mb-8 max-w-4xl">
+          {titleText.split(" ").map((word, i) => (
+            <motion.span
+              key={i}
+              custom={i}
+              initial="hidden"
+              animate="visible"
+              variants={textVariants}
+              className="inline-block mr-4"
+            >
+              {word}
+            </motion.span>
+          ))}
+        </h1>
+
+        {/* Subtítulo */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5, duration: 0.6 }}
+          className="text-xl lg:text-2xl text-slate-200 font-light leading-relaxed mb-12 max-w-2xl"
+        >
+          {isEs
+            ? "Abogados de inmigración bilingües en California. Expertos en reunificación familiar y visas de entretenimiento con un enfoque 100% humano."
+            : "Bilingual immigration attorneys in California. Experts in family reunification and entertainment visas with a 100% human approach."}
+        </motion.p>
+
+        {/* CTAs */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6, duration: 0.6 }}
+          className="flex flex-col sm:flex-row gap-6 mb-8 w-full sm:w-auto"
+        >
+          <Link
+            href={`/${locale}#contacto`}
+            className="group relative bg-gold text-navy px-10 py-5 rounded-xl font-bold transition-all shadow-[0_10px_30px_rgba(247,189,72,0.3)] text-center overflow-hidden hover:scale-105 active:scale-95"
+          >
+            <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent group-hover:animate-[shimmer_1.5s_infinite]" />
+            <span className="relative text-lg">
+              {isEs
+                ? "Agenda tu Consulta Gratuita"
+                : "Schedule Your Free Consultation"}
+            </span>
+          </Link>
+          <a
+            href="tel:18005705101"
+            className="bg-white/5 backdrop-blur-sm border border-white/20 hover:bg-white/10 text-white px-10 py-5 rounded-xl font-bold transition-all flex items-center justify-center gap-3 hover:scale-105"
+          >
+            <Phone className="h-5 w-5 text-gold" />
+            <span className="text-lg">
+              {isEs ? "Llamar ahora" : "Call now"}
+            </span>
+          </a>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1 }}
+          className="flex items-center gap-3 text-white/50 text-sm italic"
+        >
+          <BadgeCheck className="w-4 h-4 text-gold" />
+          {isEs
+            ? "Confidencialidad garantizada bajo el privilegio abogado-cliente."
+            : "Confidentiality guaranteed under attorney-client privilege."}
+        </motion.div>
       </div>
     </section>
   );

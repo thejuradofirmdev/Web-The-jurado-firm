@@ -81,9 +81,15 @@ export function Footer({ locale }: { locale: string }) {
             <li className="flex items-start gap-3">
               <MapPin className="w-5 h-5 text-[#f7bd48] shrink-0 mt-0.5" />
               <span>
-                Long Beach, California.
+                100 Oceangate, Suite 300<br />Long Beach, CA.
                 <br />
                 {isEs ? "Oficina Principal." : "Main Office."}
+              </span>
+            </li>
+            <li className="flex items-start gap-3">
+              <MapPin className="w-5 h-5 text-[#f7bd48] shrink-0 mt-0.5" />
+              <span>
+                1910 E California Ave, Suite T<br />Bakersfield, CA 93307.
               </span>
             </li>
             <li className="flex items-center gap-3">
@@ -94,8 +100,8 @@ export function Footer({ locale }: { locale: string }) {
             </li>
             <li className="flex items-center gap-3">
               <Mail className="w-5 h-5 text-[#f7bd48] shrink-0" />
-              <a href="mailto:contacto@juradofirm.com" className="hover:text-white transition-colors">
-                contacto@juradofirm.com
+              <a href="mailto:Dora@thejuradofirm.com" className="hover:text-white transition-colors">
+                Dora@thejuradofirm.com
               </a>
             </li>
           </ul>
@@ -106,7 +112,7 @@ export function Footer({ locale }: { locale: string }) {
       <div className="border-t border-white/10 px-12 py-8 bg-[#0d2340]">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-[10px] text-[#778bad] uppercase tracking-widest text-center md:text-left">
-            Copyright {new Date().getFullYear()} The Jurado Firm. Licensed by the State Bar of California.
+            Copyright {new Date().getFullYear()} The Jurado Firm.
             <p className="mt-2 text-[10px] opacity-60 normal-case tracking-normal">
               {isEs
                 ? "Legal Disclaimer: Este sitio web es solo para fines informativos. La relación abogado-cliente solo se forma después de un acuerdo firmado."

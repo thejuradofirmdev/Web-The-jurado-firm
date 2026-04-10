@@ -22,7 +22,7 @@ export default function BlogPage({
   params: { locale: string };
 }) {
   return (
-    <div className="flex flex-col w-full min-h-screen antialiased bg-[#f7f9fc]">
+    <div className="flex flex-col w-full min-h-screen antialiased bg-[#fcfaf7]">
       {/* 1️⃣ Hero inicial */}
       <BlogHero locale={locale} />
 
