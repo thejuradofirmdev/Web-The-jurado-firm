@@ -12,7 +12,7 @@ import { motion, AnimatePresence } from "framer-motion";
  */
 export function ServicesGrid({ locale }: { locale: string }) {
   const isEs = locale === "es";
-  const [selectedService, setSelectedService] = useState<any>(null);
+  const [selectedService, setSelectedService] = useState<Record<string, any> | null>(null);
 
   const services = [
     {
@@ -204,7 +204,7 @@ export function ServicesGrid({ locale }: { locale: string }) {
                 
                 <h3 className="text-3xl font-bold text-navy font-serif mb-6">{selectedService.title}</h3>
                 <p className="text-gray-600 leading-relaxed text-lg mb-8 italic">
-                  "{selectedService.desc}"
+                  &quot;{selectedService.desc}&quot;
                 </p>
                 
                 <div className="h-px bg-gray-100 mb-8" />

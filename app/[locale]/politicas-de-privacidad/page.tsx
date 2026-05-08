@@ -4,9 +4,9 @@ export default function PrivacyPolicyPage() {
       <h1 className="text-4xl font-serif font-bold text-[#000d22] mb-8">Privacy Policy</h1>
       <div className="space-y-6 text-sm leading-relaxed">
         <p>
-          At The Jurado Firm, LLP (referred to as "we," "our," or "us"), we are committed
+          At The Jurado Firm, LLP (referred to as &quot;we,&quot; &quot;our,&quot; or &quot;us&quot;), we are committed
           to protecting your privacy and safeguarding any personal information collected
-          through our website, www.thejuradofirm.com (the "Website"). This Privacy
+          through our website, www.thejuradofirm.com (the &quot;Website&quot;). This Privacy
           Policy explains how we collect, use, disclose, and protect your personal
           information and outlines your rights regarding the information you provide.
         </p>
@@ -136,7 +136,7 @@ export default function PrivacyPolicyPage() {
         <p>
           We may update this Privacy Policy periodically to reflect changes in our
           practices or for legal, regulatory, or operational reasons. Updates will be
-          posted on this page with the "Last Updated" date.
+          posted on this page with the &quot;Last Updated&quot; date.
         </p>
 
         <h2 className="text-xl font-bold mt-8 mb-4 text-[#000d22]">11. Contact Us</h2>

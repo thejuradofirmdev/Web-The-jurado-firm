@@ -60,7 +60,7 @@ export function AttorneySection({ locale }: { locale: string }) {
           <div className="relative p-8 rounded-2xl tech-bg-radial border border-white/10 shadow-xl overflow-hidden group">
             {/* Decorative quote icon */}
             <div className="absolute -top-4 -right-4 text-9xl text-white/5 font-serif leading-none group-hover:scale-110 transition-transform duration-500">
-               "
+               &quot;
             </div>
             
             <p className="relative z-10 text-xl md:text-2xl font-serif italic text-white leading-relaxed">
