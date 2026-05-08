@@ -143,14 +143,14 @@ export function ServicesGrid({ locale }: { locale: string }) {
         </div>
 
         <motion.div 
-          variants={containerVariants as any}
+          variants={containerVariants as never}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {services.map((service) => (
-            <motion.div key={service.id} variants={itemVariants as any}>
+            <motion.div key={service.id} variants={itemVariants as never}>
               <button
                 onClick={() => setSelectedService(service)}
                 className="glass-card p-8 md:p-10 rounded-2xl block group text-left w-full hover:-translate-y-2 hover:shadow-2xl hover:shadow-navy/10 transition-all duration-300 relative overflow-hidden h-full"
