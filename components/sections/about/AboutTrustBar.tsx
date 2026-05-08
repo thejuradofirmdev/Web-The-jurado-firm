@@ -14,11 +14,7 @@ export function AboutTrustBar({ locale }: { locale: string }) {
 
   return (
     <div className="hidden md:flex justify-center items-center py-10 px-12 space-x-8 w-full bg-white rounded-xl mx-auto max-w-6xl -mt-16 relative z-20 shadow-[0_40px_80px_-20px_rgba(4,28,56,0.08)]">
-      {/* State Bar destacado */}
-      <div className="flex flex-col items-center gap-2 bg-amber-50 text-amber-700 p-4 rounded-lg">
-        <span className="text-2xl">⚖️</span>
-        <span className="font-medium text-sm">State Bar of California</span>
-      </div>
+      {/* State Bar destacado (Removido) */}
 
       {items.map((item, i) => (
         <div key={i} className="flex items-center gap-8">

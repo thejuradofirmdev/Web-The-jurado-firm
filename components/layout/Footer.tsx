@@ -81,7 +81,7 @@ export function Footer({ locale }: { locale: string }) {
             <li className="flex items-start gap-3">
               <MapPin className="w-5 h-5 text-[#f7bd48] shrink-0 mt-0.5" />
               <span>
-                100 Oceangate, Suite 300<br />Long Beach, CA.
+                100 Oceangate, Suite 300<br />Long Beach, CA 90802.
                 <br />
                 {isEs ? "Oficina Principal." : "Main Office."}
               </span>
@@ -120,15 +120,15 @@ export function Footer({ locale }: { locale: string }) {
             </p>
           </div>
           <div className="flex flex-wrap justify-center gap-6 text-[10px] uppercase tracking-widest text-[#778bad]">
-            {[
-              "Privacy Policy",
-              "CCPA Compliance",
-              "Legal Disclaimer",
-            ].map((link) => (
-              <a key={link} href="#" className="hover:text-[#f7bd48] transition-colors">
-                {link}
-              </a>
-            ))}
+            <Link href={`/${locale}/politicas-de-privacidad`} className="hover:text-[#f7bd48] transition-colors">
+              Privacy Policy
+            </Link>
+            <a href="#" className="hover:text-[#f7bd48] transition-colors">
+              CCPA Compliance
+            </a>
+            <a href="#" className="hover:text-[#f7bd48] transition-colors">
+              Legal Disclaimer
+            </a>
           </div>
         </div>
       </div>

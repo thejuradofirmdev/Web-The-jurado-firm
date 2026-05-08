@@ -6,7 +6,6 @@ export function ServicesTrustBar({ locale }: { locale: string }) {
   const items = [
     { icon: "🌐", label: isEs ? "Atención Bilingüe" : "Bilingual Attention" },
     { icon: "👨‍👩‍👧", label: isEs ? "Reunificación Familiar" : "Family Reunification" },
-    { icon: "⚖️", label: "State Bar of California" },
     { icon: "📞", label: isEs ? "Soporte Telefónico" : "Phone Support" },
   ];
 

@@ -15,10 +15,6 @@ export function TrustBar({ locale }: { locale: string }) {
       label: isEs ? "Reunificación Familiar" : "Family Reunification",
     },
     {
-      icon: "⚖️",
-      label: "State Bar of California",
-    },
-    {
       icon: "📞",
       label: isEs ? "Soporte Telefónico" : "Phone Support",
     },

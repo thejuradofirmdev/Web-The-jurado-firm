@@ -64,13 +64,6 @@ export function AboutHero({ locale }: { locale: string }) {
               {isEs ? "CONOCER AL EQUIPO" : "MEET THE TEAM"}
               <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-2 transition-transform" />
             </button>
-            <div className="flex items-center text-white/80 gap-3 px-6 py-4 rounded-2xl border border-white/10 backdrop-blur-md bg-white/5">
-              <BadgeCheck className="h-7 w-7 text-gold" />
-              <div className="flex flex-col">
-                <span className="text-xs font-bold text-gold uppercase tracking-widest text-white">Certified Member</span>
-                <span className="text-sm font-medium">State Bar of California #342110</span>
-              </div>
-            </div>
           </div>
         </motion.div>
       </div>

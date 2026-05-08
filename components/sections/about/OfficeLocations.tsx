@@ -11,19 +11,13 @@ export function OfficeLocations({ locale }: { locale: string }) {
   const offices = [
     {
       city: "Long Beach",
-      address: "444 W Ocean Blvd #800\nLong Beach, CA 90802",
+      address: "100 Oceangate, Suite 300\nLong Beach, CA 90802",
       mapImg: "https://lh3.googleusercontent.com/aida-public/AB6AXuA7wrf6BKW3iiL04KJPMtSd2YgwOF9OWdXAmJ-y7hWRj2BrhgFqaWF-_k4664dG6xKTGyJRwNDBtazWPBVACG5x5QbknxeaQHguocBwNLhzh4GVazAt_c-ez-muCvRHKNC6VNE3iipDSDdiLEPTX3xgVdB9mLthSk8qTvPsaGnu8H67iuCgfSIz8M1heEOsVJNyCl10ZYa6qq05EgFsRPCXqnBR5sfzaezJCSfvrnhk0JOGHr-Awoq8jxZED0qyKuvLCgB8qk8sR8B6",
       link: "https://maps.google.com",
     },
     {
-      city: "Los Angeles",
-      address: "700 S Flower St #1000\nLos Angeles, CA 90017",
-      mapImg: "https://lh3.googleusercontent.com/aida-public/AB6AXuD_bVr0adaHSoKZU54JVosf8ar8jW4ubP_9EJY0ZoQyf8kyTUvX6Ae8tNB7jLhkeok5BDpXk4lechA0jzqEsxvZZ_EHfg-QbsjLh826lHz4SQv-rB-iCskTcwSVGl2pnwHsi1ARNmYwdIJul3m6UGl3xb6GtrQjcG2bMEvpB1NaKr4-IiZLCjchkPW2DQ7QvyjgV6VKfOVxGc7f9hD5IT3bG34flx7O686LfiEUJyAMw-0RK8iGEo9MJKb40aSpoAgN5P4axRbrrfzw",
-      link: "https://maps.google.com",
-    },
-    {
       city: "Bakersfield",
-      address: "1430 Truxtun Ave #700\nBakersfield, CA 93301",
+      address: "1910 E California Ave, Suite T\nBakersfield, CA 93307",
       mapImg: "https://lh3.googleusercontent.com/aida-public/AB6AXuCPD5lr8v3t7AJHexQqa4ymJwMfDK2Ky2_dXqjlCC1KC1SkuW6MZ-PCVQzIvYExDBigj45ZEUyj5QonF6PRZnugpofsngXZCkcqYFuZZ85FOxYIT8LRq9tpjTcm5S_NtqW3b4CSsd9AGztgm1wIL35cjAmKCdKqXdHdikpYM00BRgvdhQRHr3vma2WJZezIa5ieyWppGCnW_ZGpxvx2mIsuJbKFLQ06HJKg8S6m6Vyf7VZYSFmMk7bpCs8YSgrTHfJ2qaDVzCWNxpz5",
       link: "https://maps.google.com",
     },
@@ -36,7 +30,7 @@ export function OfficeLocations({ locale }: { locale: string }) {
           {isEs ? "Nuestras Oficinas" : "Our Locations"}
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto gap-8">
           {offices.map((office, idx) => (
             <div key={idx} className="bg-white rounded-2xl overflow-hidden shadow-[0_40px_80px_-20px_rgba(4,28,56,0.08)] group hover:-translate-y-1 transition-transform">
               {/* Encabezado Mapa */}

@@ -96,16 +96,18 @@ export function ProcessSection({ locale }: { locale: string }) {
                   className="relative flex flex-col items-center text-center lg:items-center group"
                 >
                   {/* Círculo con Icono y Número */}
-                  <div className="relative z-20 mb-8">
-                    <div className="w-24 h-24 rounded-full bg-white border-2 border-gray-100 flex items-center justify-center shadow-xl group-hover:border-gold transition-all duration-500 group-hover:shadow-gold/10 relative overflow-hidden">
+                  <div className="relative z-20 mb-8 w-24 h-24">
+                    {/* Contenedor principal con overflow-hidden para el efecto de fondo */}
+                    <div className="w-full h-full rounded-full bg-white border-2 border-gray-100 flex items-center justify-center shadow-xl group-hover:border-gold transition-all duration-500 group-hover:shadow-gold/10 relative overflow-hidden">
                       {/* Efecto hover fondo */}
                       <span className="absolute inset-0 bg-navy translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
                       
                       <step.icon className="w-8 h-8 text-navy relative z-10 group-hover:text-white transition-colors duration-500" />
-                      
-                      <div className="absolute -top-1 -right-1 w-8 h-8 rounded-full bg-gold text-navy flex items-center justify-center font-bold text-sm border-4 border-white z-20 shadow-md">
-                        {step.n}
-                      </div>
+                    </div>
+                    
+                    {/* Badge numérico fuera del overflow-hidden */}
+                    <div className="absolute -top-1 -right-1 w-8 h-8 rounded-full bg-gold text-navy flex items-center justify-center font-bold text-sm border-4 border-white z-30 shadow-md">
+                      {step.n}
                     </div>
                     
                     {/* Línea conectora Mobile (Vertical) */}
