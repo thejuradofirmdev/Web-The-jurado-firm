@@ -68,7 +68,7 @@ export function Hero({ locale }: { locale: string }) {
               custom={i}
               initial="hidden"
               animate="visible"
-              variants={textVariants}
+              variants={textVariants as any}
               className="inline-block mr-4"
             >
               {word}

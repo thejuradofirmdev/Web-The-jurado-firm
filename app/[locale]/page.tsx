@@ -3,11 +3,8 @@ import { TrustBar } from "@/components/sections/TrustBar";
 import { AttorneySection } from "@/components/sections/AttorneySection";
 import { ServicesGrid } from "@/components/sections/ServicesGrid";
 import { ProcessSection } from "@/components/sections/ProcessSection";
-
 import { GoogleReviews } from "@/components/sections/GoogleReviews";
-import { CommitmentSection } from "@/components/sections/CommitmentSection";
-import { TeamSection } from "@/components/sections/TeamSection";
-import { TrustBadges } from "@/components/sections/TrustBadges";
+
 import { FinalCTA } from "@/components/sections/FinalCTA";
 
 import { ContactSection } from "@/components/sections/ContactSection";

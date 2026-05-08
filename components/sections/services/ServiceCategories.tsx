@@ -107,7 +107,7 @@ export function ServiceCategories({ locale }: { locale: string }) {
         </div>
 
         <motion.div 
-          variants={containerVariants}
+          variants={containerVariants as any}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
@@ -116,7 +116,7 @@ export function ServiceCategories({ locale }: { locale: string }) {
           {categories.map((cat) => (
             <motion.div 
               key={cat.id} 
-              variants={cardVariants}
+              variants={cardVariants as any}
               className={`relative group p-10 rounded-3xl transition-all duration-500 flex flex-col h-full
                 ${cat.featured 
                   ? "bg-navy text-white shadow-2xl shadow-gold/20 ring-1 ring-gold/20" 
